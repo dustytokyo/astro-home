@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/DefaultLayout.astro';
+import { sites } from '../../config/home';
+---
+
+<Layout title="Star Home ☄️">
+  <div class="container m-10">
+    {sites.map((site) => (
+      <div class="mb-10">
+        <h2 class="text-2xl">{site.cat}</h2>
+        <ul class="list-disc ml-10 mt-3">
+          {site.urls.map((url) => (
+            <li class="my-2"><a class="text-blue-300 hover:text-blue-100" target="_blank" href={url}>{url}</a></li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</Layout>

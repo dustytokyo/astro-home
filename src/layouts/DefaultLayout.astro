@@ -1,0 +1,33 @@
+---
+import { ThemeInitScript } from '@starwind-ui/astro/theme';
+import '@/styles/starwind.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <!-- <link rel="icon" href="/favicon.ico" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <ThemeInitScript />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main class="m-10 p-10">
+      <h1>{title}</h1>
+      <article>
+        <slot />
+        <!-- your content is injected here -->
+      </article>
+      <Footer />
+    </main>
+  </body><style>
+    h1 {
+      font-size: 2rem;
+    }
+  </style>
+</html>
